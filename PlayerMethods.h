@@ -101,7 +101,7 @@ namespace LuaPlayer
     int GetStat(lua_State* L, Player* player)
     {
         uint32 stat = Eluna::CHECKVAL<uint32>(L, 2);
-        Eluna::Push(L, player->GetStat(stat));
+        Eluna::Push(L, player->GetStat(static_cast<Stats>(stat)));
         return 1;
     }
 
