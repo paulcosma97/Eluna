@@ -93,6 +93,19 @@ namespace LuaPlayer
     }
 
     /**
+    * Return the value of the given stat type.
+    * 
+    * @param uint32 stat
+    * @return uint32 statValue
+    */
+    int GetStat(lua_State* L, Player* player)
+    {
+        uint32 stat = Eluna::CHECKVAL<uint32>(L, 2);
+        Eluna::Push(L, player->GetStat(stat));
+        return 1;
+    }
+
+    /**
      * Returns 'true' if the [Player] has a [Spell] by specific ID, 'false' otherwise.
      *
      * @param uint32 spellId
