@@ -112,7 +112,7 @@ namespace LuaPlayer
     */
     int GetArmor(lua_State* L, Player* player)
     {
-        Eluna::Push(L, player->GetArmor()));
+        Eluna::Push(L, player->GetArmor());
         return 1;
     }
 
