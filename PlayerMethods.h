@@ -106,6 +106,17 @@ namespace LuaPlayer
     }
 
     /**
+    * Return the value of armor.
+    * 
+    * @return int32 statValue
+    */
+    int GetArmor(lua_State* L, Player* player)
+    {
+        Eluna::Push(L, player->GetArmor()));
+        return 1;
+    }
+
+    /**
      * Returns 'true' if the [Player] has a [Spell] by specific ID, 'false' otherwise.
      *
      * @param uint32 spellId
